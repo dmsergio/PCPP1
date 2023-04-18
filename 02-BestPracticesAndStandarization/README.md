@@ -35,3 +35,44 @@ Colección de 19 sentencias que reflejan la filosofía detrás de Python, sus pr
     If the implementation is hard to explain, it's a bad idea.
     If the implementation is easy to explain, it may be a good idea.
     Namespaces are one honking great idea -- let's do more of those!
+
+## ¿Qué define el PEP8?
+
+Describe las convenciones para programar en Python. Se trata de una serie de guías de estilo que se deben seguir en la implementación de proyectos. Aún así, no se trata de una guía de estilos estricta, sino más bien una guía que se debería seguir siempre y cuando sea posible.
+
+La idea principal de este PEP es la de ofrecer unas convenciones para ser consistente a la hora de programar, aún siendo totalemente elegible adoptar unas convenciones propias, pero siempre siendo consistentes con ellas.
+
+### Herramientas para comprobar el estilo del código
+
+- **pycodestyle**. Comprueba el estilo del código.
+
+    `pip install pycodestyle`
+
+- **autopep8**. Formatea el código en base al resultado de la herramienta "pycodestyle".
+
+    `pip install autopep8`
+
+- [**PEP 8 online**](http://pep8online.com/about). Herramienta online.
+
+### Recomendaciones
+
+**Indentación**
+
+- Usar cuatro espacios para identar.
+- Usar espacios en lugar de tabulaciones.
+- En Python 3 no está permitido identar con espacios y con tabulaciones. Se debe escoger uno de ellos. De lo contrario Python lanzará la excepción *TabError*.
+
+**Longitud de línea**
+
+- Máximo de 79 caracteres.
+- En comentarios y docstrings, no debe exceder de 72 caracteres.
+- Por conveniencia, se puede subir a 99 caracteres (para comentarios y docstrings sigue a 72).
+
+**Importaciones**
+
+- Siempre al principio del fichero.
+- Seguir el orden:
+    1. Librerías estándar.
+    2. Paquetes de terceros.
+    3. Librerías propias.
+- Una importación por línea.
