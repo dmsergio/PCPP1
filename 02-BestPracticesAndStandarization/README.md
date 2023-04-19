@@ -6,13 +6,13 @@ Existen tres tipos diferentes de PEPs:
 - **Informational**: describe problemas de diseño, y además información y guías de estilo para la comunidad.
 - **Process**: describe diferentes procesos a resolver alrededor de Python.
 
-## ¿Qué define el PEP1?
+## PEP1
 
 - **Python's Steering Council**. Un comité de cinco personas quienes se encargan de aceptar o rechazar PEPs.
 - **Python's Core Developers**. Grupo de voluntarios que se encargan de gestionar Python.
 - **Python's BDFL**. Guido van Rossum, creador original de Python. **B**enevolent **D**ictator **F**or **L**ife.
 
-## ¿Qué define el PEP20 (Zen of Python)?
+## PEP20 (Zen of Python)
 
 Colección de 19 sentencias que reflejan la filosofía detrás de Python, sus principios, y el diseño. Este "poema" fue escrito por Tim Peters.
 
@@ -36,7 +36,7 @@ Colección de 19 sentencias que reflejan la filosofía detrás de Python, sus pr
     If the implementation is easy to explain, it may be a good idea.
     Namespaces are one honking great idea -- let's do more of those!
 
-## ¿Qué define el PEP8?
+## PEP8
 
 Describe las convenciones para programar en Python. Se trata de una serie de guías de estilo que se deben seguir en la implementación de proyectos. Aún así, no se trata de una guía de estilos estricta, sino más bien una guía que se debería seguir siempre y cuando sea posible.
 
@@ -106,3 +106,77 @@ La idea principal de este PEP es la de ofrecer unas convenciones para ser consis
 - Mejor usar el operador `is not` en lugar de `not ... is`.
 - Capturar las excepciones de forma explícita, no simplemente con la sentencia `except:`.
 
+## PEP257
+
+Estandarización para estructurar los docstring. Muestra las convenciones, buenas prácticas, y semánticas. Trata de responder las siguientes questiones:
+
+- ¿Qué debería contener un docstring de Python?
+- ¿Cómo debería usarse un docstring de Python?
+
+El docstring es un string de documentación en Python que se usa tanto en clases, módulos, métodos y funciones para agregarles información sobre su finalidad y funcionamiento. El docstring debe ir dentro del objeto a documentar, ej.:
+
+```python
+class MyClass:
+    """MyClass docstring"""
+
+    @staticmethod
+    def my_func():
+        """my_func docstring"""
+        pass
+```
+
+- El docstring debe estar envuelto entre tres comillas dobles; `"""..."""`.
+- Comenzar siempre en mayúscula (a no ser que se trate de un identificador) y terminar la sentencia con un "punto".
+- Debe ser imperativo.
+
+### Formatos de docstring
+
+**reStructuredText**
+
+- Formato oficial de Python descrito en el PEP287.
+    ```python
+    def get_full_name(name="Sergio", last_name=""):
+        """Returns a full name composed by name + last_name.
+
+        Keyword arguments:
+        :arg name: the person name (default: "Sergio")
+        :type name: str
+        :arg last_name: the person last name (default: "")
+        :type name: str
+        """
+        return f"{name} {last_name}"
+    ```
+
+**NumPy/SciPy**
+
+- Combinación entre "Google docstrings" y "reStructuredText".
+    ```python
+    def get_full_name(name="Sergio", last_name=""):
+        """Returns a full name composed by name + last_name.
+
+        Parameters:
+        -----------
+        name: str
+            The person name (default: "Sergio").
+        last_name:
+            The person last name (default: "").
+        """
+        return f"{name} {last_name}"
+    ```
+
+## Linters y Fixers
+
+**Linters**
+
+- Flake8
+- Pylint
+- Pyflakes
+- Pychecker
+- Mypy
+- Pycodestyle
+
+**Fixers**
+
+- Black
+- YAPF
+- autopep8
