@@ -76,3 +76,33 @@ La idea principal de este PEP es la de ofrecer unas convenciones para ser consis
     2. Paquetes de terceros.
     3. Librerías propias.
 - Una importación por línea.
+
+**Strings**
+
+- PEP8 no especifica si usar comillas simples o dobles a la hora de definir strings. Simplemente escoger la opción deseada y ser constante con ella.
+
+**Comentarios**
+
+- Máximo 72 caracteres por línea.
+- Comenzar siempre en mayúscula (a no ser que se trate de un identificador) y terminar la sentencia con un "punto".
+- En los bloques de comentarios donde hay más de una línea, se debe separar cada párrafo por una línea en blanco (pero igualmente comentada con el símbolo "#").
+- En los comentarios que se indican a la misma altura que una expresión Python, usar dos o más espacios para separar la expresión en sí con el comentario.
+
+**Convención de nombres**
+
+- **Variables**: *snake_case*, ej.: `name`, `last_name`
+- **Funciones**: *snake_case*, ej.: `print`, `check_value`
+- **Métodos**: *snake_case*, ej.: `exists`, `get_name`
+- **Clases**: *CamelCase*, ej.: `Vehicle`, `AirVehicle`
+- **Constantes**: *SNAKE_CASE*, ej.: `PI`, `DISCOUNT_VALUE`
+- **Módulos**: *snake_case*, ej.: `utils.py`, `math_utils.py`
+- **Paquetes**: *lowercase*, ej.: `utils`, `mathutils`
+- **Tipos de varialbes**: *CamelCase*, ej.: `Num`, `AnyStr`
+
+**Recomendaciones al programar**
+
+- Hacer comparaciones sobre `None` con los operadores `is` y `is not`.
+- Hacer comparaciones sobre valores booleanos con los operadores `is` y `is not`.
+- Mejor usar el operador `is not` en lugar de `not ... is`.
+- Capturar las excepciones de forma explícita, no simplemente con la sentencia `except:`.
+
